@@ -4,3 +4,9 @@ module.exports = {
       .then(response => response.json());
   }
 };
+// module.exports = {
+//   postMovies: () => {
+//     return fetch('api/movies')
+//         .then(response => response.json());
+//   }
+// }

@@ -3,12 +3,32 @@
     {
       "title": "Casablanca",
       "rating": "4",
+      "genre": "Thriller",
       "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
+      "genre": "Action",
       "id": 2
+    },
+    {
+      "title": "whoa",
+      "rating": "",
+      "genre": "",
+      "id": 3
+    },
+    {
+      "title": "Night at the Roxbury",
+      "rating": "4",
+      "genre": "Comedy",
+      "id": 4
+    },
+    {
+      "title": "Fast and Furious",
+      "rating": "3",
+      "genre": "Action",
+      "id": 5
     }
   ]
 }

@@ -8,8 +8,27 @@
 <body>
 
     <div class="container">
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
+        <div class="preload"><img src="http://i.imgur.com/KUJoe.gif"></div>
+            <div id="content">
+                <form>
+                    <div class="row">
+                        <div class="col">
+<!--                            Changed the Movie Title ID to "title from "addMovie" "-->
+                            <input type="text" id="title" class="form-control" placeholder="Movie Title">
+                            <input type="text" id="rating" class="form-control" placeholder="Rating">
+                            <input type="text" id="genre" class="form-control" placeholder="Genre">
+                        </div>
+                </div>
+<!--                    Star Rating -->
+<!--                    <div class="star-rating"><s><s><s><s><s></s></s></s></s></s></div>-->
+<!--                    <div class="show-result">No stars selected yet.</div>-->
+<!--                    Button -->
+                    <button class="btn btn-primary" id="submit" type="submit">Submit form</button>
+            </form>
+                <br>
+            <div id="display"></div>
+            <div id="results"></div>
+            </div>
     </div>
 
     <script src="./main.js"></script>
