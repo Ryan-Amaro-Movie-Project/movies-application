@@ -15,8 +15,8 @@
                         <div class="col">
 <!--                            Changed the Movie Title ID to "title from "addMovie" "-->
                             <input type="text" id="title" class="form-control" placeholder="Movie Title">
-                            <input type="text" id="rating" class="form-control" placeholder="Rating">
                             <input type="text" id="genre" class="form-control" placeholder="Genre">
+                            <input type="text" id="rating" class="form-control" placeholder="Rating">
                         </div>
                 </div>
 <!--                    Star Rating -->
@@ -27,8 +27,20 @@
                     <button class="btn btn-primary" id="delete" type="submit">Delete</button>
             </form>
                 <br>
-            <div id="display"></div>
-            <div id="results"></div>
+
+<!--                Working on getting the Table in place, with the movies in its proper spot, tie-in the selectors with HTML and JS for the submit to work-->
+                <table class="table-responsive table-hover" id="movieList">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Rating</th>
+                    </tr>
+                    </thead>
+                </table>
+<!--            <div id="display"></div>-->
+<!--            <div id="results"></div>-->
             </div>
     </div>
 

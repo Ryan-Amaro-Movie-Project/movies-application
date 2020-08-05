@@ -47,3 +47,8 @@ html, body {
 .star-rating s:before {
     content: "\2606";
 }
+
+/*Table*/
+th{
+    border: 2px solid black;
+}

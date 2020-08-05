@@ -10,25 +10,16 @@ const $ = require('jquery');
  */
 const {getMovies} = require('./api.js');
 $(function () {
-    let $title = $("#title");
-    let $rating = $("#rating");
-    let $genre = $("#genre");
-//Changed the Single quotes to double quotes from Lines 13-15
-
+    let $title = $("#title").val();
+    let $rating = $("#rating").val();
+    let $genre = $("#genre").val();
 //Movie List
     getMovies().then((movies) => {
-        $("#display").html('Here are all the movies:');
-
-        //Added "genre" to the end of the forEach on Line 23, in order for it to be defined and show on the HTML
         movies.forEach(({title, rating, id, genre}) => {
-            $("#results").append(`<li>${id} - ${title} - ${rating} - ${genre} </li>`);
-            $("#results").css('color', 'red');
+            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td></tr>`);
+            $("#movieList").css('color', 'green');
         });
     })
-    //     .catch((error) => {
-    //     alert('Oh no! Something went wrong.\nCheck the console for details.')
-    //     console.log(error);
-    // });
 //Function for Form & Submit Event
     $("#submit").on('click', (function () {
 
@@ -42,7 +33,7 @@ $(function () {
                 url: '/api/movies',
                 data: movie,
                 success: function (newMovie) {
-                    $("#results").append('<li>' + 'Movie: ' + "-" + newMovie.title + "-" + newMovie.rating + "-" + newMovie.genre + '</li>');
+                    $("#movieList").append('<tr><td>' + 'Movie: </td>' + "-" + '<td> newMovie.title</td> '+ "-" + '<td>newMovie.rating </td>'+ "-" + '<td>newMovie.genre</td>' + '</tr>');
                 },
                 error: function () {
                     alert('error saving movie');
