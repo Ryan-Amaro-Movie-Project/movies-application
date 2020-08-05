@@ -20,7 +20,7 @@ $(function () {
         $("#display").html('Here are all the movies:');
 
         //Added "genre" to the end of the forEach on Line 23, in order for it to be defined and show on the HTML
-        movies.forEach(({title, rating, id,genre}) => {
+        movies.forEach(({title, rating, id, genre}) => {
             $("#results").append(`<li>${id} - ${title} - ${rating} - ${genre} </li>`);
             $("#results").css('color', 'red');
         });
@@ -34,7 +34,7 @@ $(function () {
             let movie = {
                 title: $title.val(),
                 rating: $rating.val(),
-                genre: $genre.val()
+                genre: $genre.val(),
             };
             $.ajax({
                 type: 'POST',
@@ -47,6 +47,27 @@ $(function () {
                     alert('error saving movie');
                 }
             })
+
+            // $("#delete").on('click', (function () {
+
+            // let movie = {
+            //     title: $title.val(),
+            //     rating: $rating.val(),
+            //     genre: $genre.val(),
+            // };
+            $("#delete").click(function (e) {
+                e.preventDefault();
+                let removeId = $(this).movies.id
+                // This is how you get id of the file from same element using data attribute.
+                $.ajax({
+                    url: '/api/movies',
+                    type: 'DELETE',
+                    success: function (deleteMovie) {
+                        ('#comment-'+id'').hide();
+                        $(#comment-'+id'').css('display','none');
+                    }
+                });
+            });
 
 
 //Star Rating Function
@@ -61,7 +82,6 @@ $(function () {
                 });
             });
         })
-
     );
 
 // Function for Loading GIF
@@ -71,4 +91,4 @@ $(function () {
         });
     });
 
-})
+});
