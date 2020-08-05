@@ -48,6 +48,21 @@ $(function () {
                 }
             })
 
+
+        // $("#delete").on('click', (function (id) {
+        //
+        //         $.ajax({
+        //             type: "DELETE"
+        //             url: '/api/movies',
+        //             data: movie,
+        //             success: function (newMovie) {
+        //                 $("#results").append('<li>' + 'Movie: ' + "-" + newMovie.title + "-" + newMovie.rating + "-" + newMovie.genre + '</li>');
+        //             },
+        //             error: function () {
+        //                 alert('error saving movie');
+        //             }
+        //         })
+
             // $("#delete").on('click', (function () {
 
             // let movie = {
@@ -55,19 +70,19 @@ $(function () {
             //     rating: $rating.val(),
             //     genre: $genre.val(),
             // };
-            $("#delete").click(function (e) {
-                e.preventDefault();
-                let removeId = $(this).movies.id
-                // This is how you get id of the file from same element using data attribute.
-                $.ajax({
-                    url: '/api/movies',
-                    type: 'DELETE',
-                    success: function (deleteMovie) {
-                        ('#comment-'+id'').hide();
-                        $(#comment-'+id'').css('display','none');
-                    }
-                });
-            });
+            // $("#delete").click(function (e) {
+            //     e.preventDefault();
+            //     let removeId = $(this).movies.id
+            //     // This is how you get id of the file from same element using data attribute.
+            //     $.ajax({
+            //         url: '/api/movies',
+            //         type: 'DELETE',
+            //         success: function (deleteMovie) {
+            //             ('#comment-'+id'').hide();
+            //             $(#comment-'+id'').css('display','none');
+            //         }
+            //     });
+            // });
 
 
 //Star Rating Function
