@@ -1,34 +1,22 @@
 {
   "movies": [
     {
-      "title": "Star Wars: A New Hope",
+      "title": "toy story 1",
+      "rating": "32",
+      "genre": "kids",
+      "id": 1
+    },
+    {
+      "title": "toy story",
       "rating": "5",
-      "genre": "Action",
+      "genre": "kids",
       "id": 2
     },
     {
-      "title": "Night at the Roxbury",
-      "rating": "4",
-      "genre": "Comedy",
-      "id": 4
-    },
-    {
-      "title": "Fast and Furious",
-      "rating": "3",
+      "title": "Ali",
+      "rating": "5",
       "genre": "Action",
-      "id": 5
-    },
-    {
-      "title": "Toy Story",
-      "rating": "",
-      "genre": "",
-      "id": 8
-    },
-    {
-      "title": "Rush Hour",
-      "rating": "",
-      "genre": "",
-      "id": 9
+      "id": 3
     }
   ]
 }

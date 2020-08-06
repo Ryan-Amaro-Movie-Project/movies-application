@@ -2,12 +2,12 @@
  * es6 modules and imports
  */
 const $ = require('jquery');
-// import sayHello from './hello';
-// sayHello('World');
+
 
 /**
  * require style imports
  */
+
 const {getMovies} = require('./api.js');
 
 let $title = $("#title");
@@ -19,11 +19,17 @@ function loadMovies() {
     $("#movieList").empty();
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id, genre}) => {
-            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button id="delete-${id}">Delete</button></td></tr>`);
+            //download font awesome for logos
+            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button id="delete-${id}">Delete</button><button type="button" class="btn btn-info btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal">Edit</button></td></tr>`);
             $("#movieList").css('color', 'green');
             $(`#delete-${id}`).click(() => deleteMovie(id));
+            $(`#edit-${id}`).click(() => {
+                $("#editTitle").val(title);
+                $("#editRating").val(rating);
+                $("#editGenre").val(genre);
+                $("#editId").val(id)
+            });
         });
-
     })
 }
 
@@ -42,21 +48,14 @@ $("#submit").on('click', function (e) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(movie),
-        })
-            .then(response => response.json()).then(
+        }).then(resp => resp.json()).then(
             function (newMovie) {
-                // $("#movieList").append(`<tr><td>${newMovie.title}</td><td>${newMovie.genre}</td><td>${newMovie.rating}</td><td>${newMovie.id}</td></tr>`);
                 loadMovies();
-            })
-            .catch(error => {
-                alert('It\'s not working bro')
-            })
+            }).catch(error => {
+            alert('It\'s not working bro')
+        })
     }
 );
-
-// error: function () {
-//     alert('error saving movie');
-// }
 
 function deleteMovie(id) {
     $.ajax({
@@ -72,6 +71,33 @@ function deleteMovie(id) {
     });
 }
 
+function editMovie(movie) {
+    fetch('/api/movies/' + movie.id, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(movie),
+    }).then(resp => resp.json()).then(
+        function (newMovie) {
+            loadMovies();
+        }).catch(error => {
+        alert('It\'s not working bro  - Ryan')
+    })
+}
+
+$("#editMovie").on('click', function (e) {
+        e.preventDefault()
+        let movie = {
+            title: $("#editTitle").val(),
+            rating: $("#editRating").val(),
+            genre: $("#editGenre").val(),
+            id: $("#editId").val()
+        };
+        editMovie(movie);
+        // $("#myModal").modal("toggle");
+    }
+);
 
 // Function for Loading GIF
 $(function () {
