@@ -10,13 +10,13 @@ const $ = require('jquery');
  */
 const {getMovies} = require('./api.js');
 $(function () {
-    let $title = $("#title").val();
-    let $rating = $("#rating").val();
-    let $genre = $("#genre").val();
+    let $title = $("#title");
+    let $rating = $("#rating");
+    let $genre = $("#genre");
 //Movie List
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id, genre}) => {
-            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td></tr>`);
+            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td>${id}</td></tr>`);
             $("#movieList").css('color', 'green');
         });
     })
@@ -33,7 +33,7 @@ $(function () {
                 url: '/api/movies',
                 data: movie,
                 success: function (newMovie) {
-                    $("#movieList").append('<tr><td>' + 'Movie: </td>' + "-" + '<td> newMovie.title</td> '+ "-" + '<td>newMovie.rating </td>'+ "-" + '<td>newMovie.genre</td>' + '</tr>');
+                    $("#movieList").append(`<tr><td>${newMovie.title}</td><td>${newMovie.genre}</td><td>${newMovie.rating}</td><td>${id}</td></tr>`);
                 },
                 error: function () {
                     alert('error saving movie');
