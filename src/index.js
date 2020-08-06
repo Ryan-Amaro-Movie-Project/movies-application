@@ -10,10 +10,11 @@ const $ = require('jquery');
  */
 const {getMovies} = require('./api.js');
 
+let $title = $("#title");
+let $rating = $("#rating");
+let $genre = $("#genre");
+
 function loadMovies() {
-    let $title = $("#title");
-    let $rating = $("#rating");
-    let $genre = $("#genre");
 //Movie List
     $("#movieList").empty();
     getMovies().then((movies) => {
@@ -28,26 +29,34 @@ function loadMovies() {
 
 loadMovies();
 //Function for Form & Submit Event
-$("#submit").on('click', (function () {
-
+$("#submit").on('click', function (e) {
+        e.preventDefault()
         let movie = {
             title: $title.val(),
             rating: $rating.val(),
             genre: $genre.val(),
         };
-        $.ajax({
-            type: 'POST',
-            url: '/api/movies',
-            data: movie,
-            success: function (newMovie) {
-                $("#movieList").append(`<tr><td>${newMovie.title}</td><td>${newMovie.genre}</td><td>${newMovie.rating}</td><td>${newMovie.id}</td></tr>`);
+        fetch('/api/movies', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            error: function () {
-                alert('error saving movie');
-            }
+            body: JSON.stringify(movie),
         })
-    })
+            .then(response => response.json()).then(
+            function (newMovie) {
+                // $("#movieList").append(`<tr><td>${newMovie.title}</td><td>${newMovie.genre}</td><td>${newMovie.rating}</td><td>${newMovie.id}</td></tr>`);
+                loadMovies();
+            })
+            .catch(error => {
+                alert('It\'s not working bro')
+            })
+    }
 );
+
+// error: function () {
+//     alert('error saving movie');
+// }
 
 function deleteMovie(id) {
     $.ajax({

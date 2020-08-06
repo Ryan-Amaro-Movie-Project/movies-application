@@ -1,12 +1,6 @@
 {
   "movies": [
     {
-      "title": "Casablanca",
-      "rating": "4",
-      "genre": "Thriller",
-      "id": 1
-    },
-    {
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "genre": "Action",
@@ -23,6 +17,18 @@
       "rating": "3",
       "genre": "Action",
       "id": 5
+    },
+    {
+      "title": "Toy Story",
+      "rating": "",
+      "genre": "",
+      "id": 8
+    },
+    {
+      "title": "Rush Hour",
+      "rating": "",
+      "genre": "",
+      "id": 9
     }
   ]
 }
