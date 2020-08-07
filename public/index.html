@@ -12,12 +12,17 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<header>
+    <h1>Drive In Movie Collection</h1>
+    <br>
+    <p>A place to watch all of your favorite movies on the Big Screen!</p>
+</header>
 <div class="preload"><img src="http://i.imgur.com/KUJoe.gif"></div>
 <div class="container">
     <div id="content">
         <form id="userInput">
-            <div class="row">
-                <div class="col">
+            <div class="row m-3">
+                <div class="col m-3">
                     <input type="text" id="title" class="form-control" placeholder="Movie Title">
                     <input type="text" id="genre" class="form-control" placeholder="Genre">
                     <input type="text" id="rating" class="form-control" placeholder="Rating">
@@ -26,13 +31,13 @@
             <button class="btn btn-primary" id="submit" type="submit">Add Movie</button>
         </form>
         <br>
-        <table class="table-responsive table-hover">
+        <table class="table-responsive table-hover" id="movieTable">
             <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Action</th>
+                <th scope class="col col-3">Title</th>
+                <th scope class="col col-3">Genre</th>
+                <th scope class="col col-3">Rating</th>
+                <th scope class="col col-3">Action</th>
             </tr>
             </thead>
             <tbody id="movieList"></tbody>
@@ -47,8 +52,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-
-                <h4 class="modal-title">Edit</h4>
+                <h4 class="modal-title">Modify Movie Details</h4>
             </div>
             <div class="modal-body">
                 <input type="text" id="editTitle" class="form-control" placeholder="Movie Title">

@@ -1,16 +1,58 @@
 {
   "movies": [
     {
-      "title": "Toy Story",
-      "rating": "5",
-      "genre": "Children",
-      "id": 1
-    },
-    {
       "title": "Ali",
       "rating": "5",
       "genre": "Action",
       "id": 3
+    },
+    {
+      "title": "Dumbo",
+      "rating": "4",
+      "genre": "Children",
+      "id": 4
+    },
+    {
+      "title": "Fight Club",
+      "rating": "4",
+      "genre": "Fighting",
+      "id": 5
+    },
+    {
+      "title": "Deja Vu",
+      "rating": "4",
+      "genre": "Suspense",
+      "id": 6
+    },
+    {
+      "title": "Lethal Weapon",
+      "rating": "4",
+      "genre": "Action",
+      "id": 7
+    },
+    {
+      "title": "Friday",
+      "rating": "5",
+      "genre": "Drama",
+      "id": 8
+    },
+    {
+      "title": "Friday After Next",
+      "rating": "5",
+      "genre": "Drama",
+      "id": 9
+    },
+    {
+      "title": "Next Friday",
+      "rating": "5",
+      "genre": "Drama",
+      "id": 10
+    },
+    {
+      "title": "ScarFace",
+      "rating": "5",
+      "genre": "Action",
+      "id": 11
     }
   ]
 }

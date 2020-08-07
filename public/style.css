@@ -1,12 +1,28 @@
 html, body {
+    background-image: url('./img/redland.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     height: 100%;
 }
-
+header{
+    display: flex;
+    justify-content: center;
+    color: ghostwhite;
+}
+#movieTable{
+    background: rgba(159,93,99, .95);
+    color: ghostwhite;
+}
+/*th{*/
+/*    width: 33%;*/
+/*}*/
 .container {
     position: relative;
     top: 50%;
-    transform: translateY(-100%);
     text-align: center;
+    margin-bottom: 30px;
 }
 .preload {
     width: 100px;
