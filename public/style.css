@@ -49,6 +49,6 @@ html, body {
 }
 
 /*Table*/
-th{
-    border: 2px solid black;
+thead{
+    width: 80%;
 }

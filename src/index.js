@@ -16,7 +16,7 @@ function loadMovies() {
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id, genre}) => {
             //download font awesome for logos
-            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button type="button" class="btn btn-danger btn-sm" id="delete-${id}">Delete</button><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal">Edit</button></td></tr>`);
+            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button type="button" class="btn btn-danger btn-sm" id="delete-${id}"><i class="fas fa-trash-alt"></i></button><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal"><i class="fas fa-edit"></i></button></td></tr>`);
             $("#movieList").css('color', 'green');
             $(`#delete-${id}`).click(() => deleteMovie(id));
             $(`#edit-${id}`).click(() => {
