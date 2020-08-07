@@ -15,7 +15,6 @@ function loadMovies() {
     $("#movieList").empty();
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id, genre}) => {
-            //download font awesome for logos
             $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button type="button" class="btn btn-danger btn-sm" id="delete-${id}"><i class="fas fa-trash-alt"></i></button><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal"><i class="fas fa-edit"></i></button></td></tr>`);
             $(`#delete-${id}`).click(() => deleteMovie(id));
             $(`#edit-${id}`).click(() => {
@@ -27,6 +26,7 @@ function loadMovies() {
         });
     })
 }
+
 loadMovies();
 //Function for Form & Submit Event
 $("#submit").on('click', function (e) {
@@ -46,17 +46,18 @@ $("#submit").on('click', function (e) {
             function (newMovie) {
                 loadMovies();
             }).catch(error => {
-            alert('It\'s not working bro')
+            alert('Could not submit, please contact Administrator')
         })
     }
 );
+
 //Delete Function
 function deleteMovie(id) {
     $.ajax({
         url: '/api/movies/' + id,
         method: 'DELETE',
         success: function () {
-            alert("You have deleted successfully");
+            alert("You have deleted the movie successfully");
             loadMovies();
         },
         error: function () {
@@ -64,6 +65,7 @@ function deleteMovie(id) {
         }
     });
 }
+
 //Edit Function
 function editMovie(movie) {
     fetch('/api/movies/' + movie.id, {
@@ -76,9 +78,10 @@ function editMovie(movie) {
         function (newMovie) {
             loadMovies();
         }).catch(error => {
-        alert('It\'s not working bro  - Ryan')
+        alert('Could not Edit Successfully')
     })
 }
+
 $("#editMovie").on('click', function (e) {
         e.preventDefault()
         let movie = {
@@ -91,8 +94,8 @@ $("#editMovie").on('click', function (e) {
     }
 );
 // Function for Loading GIF
-    $(".preload").fadeOut(2000, function () {
-        $("#content").fadeIn(5000);
-    });
+$(".preload").fadeOut(2000, function () {
+    $("#content").fadeIn(5000);
+});
 
 

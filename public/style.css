@@ -15,9 +15,6 @@ header{
     background: rgba(159,93,99, .95);
     color: ghostwhite;
 }
-/*th{*/
-/*    width: 33%;*/
-/*}*/
 .container {
     position: relative;
     top: 50%;
@@ -32,38 +29,6 @@ header{
     top: 50%;
     left: 50%;
 }
-/*Star Rating*/
-.show-result {
-    margin: 10px;
-    padding: 10px;
-    color: green;
-    font-size: 20px;
-}
-
-.star-rating s:hover,
-.star-rating s.active {
-    color: red;
-}
-.star-rating s,
-.star-rating-rtl s {
-    color: black;
-    font-size: 50px;
-    cursor: default;
-    text-decoration: none;
-    line-height: 50px;
-}
-.star-rating {
-    padding: 2px;
-}
-.star-rating s:hover:before,
-.star-rating s.rated:before,
-.star-rating s.active:before {
-    content: "\2605";
-}
-.star-rating s:before {
-    content: "\2606";
-}
-
 /*Table*/
 thead{
     width: 80%;
