@@ -2,14 +2,10 @@
  * es6 modules and imports
  */
 const $ = require('jquery');
-
-
 /**
  * require style imports
  */
-
 const {getMovies} = require('./api.js');
-
 let $title = $("#title");
 let $rating = $("#rating");
 let $genre = $("#genre");
@@ -20,7 +16,7 @@ function loadMovies() {
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id, genre}) => {
             //download font awesome for logos
-            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button id="delete-${id}">Delete</button><button type="button" class="btn btn-info btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal">Edit</button></td></tr>`);
+            $("#movieList").append(`<tr><td>${title}</td><td>${genre}</td><td>${rating}</td><td><button type="button" class="btn btn-danger btn-sm" id="delete-${id}">Delete</button><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" id="edit-${id}"data-target="#myModal">Edit</button></td></tr>`);
             $("#movieList").css('color', 'green');
             $(`#delete-${id}`).click(() => deleteMovie(id));
             $(`#edit-${id}`).click(() => {
@@ -32,7 +28,6 @@ function loadMovies() {
         });
     })
 }
-
 loadMovies();
 //Function for Form & Submit Event
 $("#submit").on('click', function (e) {
@@ -56,7 +51,7 @@ $("#submit").on('click', function (e) {
         })
     }
 );
-
+//Delete Function
 function deleteMovie(id) {
     $.ajax({
         url: '/api/movies/' + id,
@@ -70,7 +65,7 @@ function deleteMovie(id) {
         }
     });
 }
-
+//Edit Function
 function editMovie(movie) {
     fetch('/api/movies/' + movie.id, {
         method: 'PATCH',
@@ -85,7 +80,6 @@ function editMovie(movie) {
         alert('It\'s not working bro  - Ryan')
     })
 }
-
 $("#editMovie").on('click', function (e) {
         e.preventDefault()
         let movie = {
@@ -95,14 +89,11 @@ $("#editMovie").on('click', function (e) {
             id: $("#editId").val()
         };
         editMovie(movie);
-        // $("#myModal").modal("toggle");
     }
 );
-
 // Function for Loading GIF
-$(function () {
     $(".preload").fadeOut(2000, function () {
-        $("#content").fadeIn(1000);
+        $("#content").fadeIn(5000);
     });
-});
+
 

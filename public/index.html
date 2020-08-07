@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8"/>
     <title>My Application</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
+<div class="preload"><img src="http://i.imgur.com/KUJoe.gif"></div>
 <div class="container">
-    <div class="preload"><img src="http://i.imgur.com/KUJoe.gif"></div>
     <div id="content">
-        <form>
+        <form id="userInput">
             <div class="row">
                 <div class="col">
                     <input type="text" id="title" class="form-control" placeholder="Movie Title">
@@ -20,7 +22,7 @@
                     <input type="text" id="rating" class="form-control" placeholder="Rating">
                 </div>
             </div>
-            <button class="btn btn-primary" id="submit" type="submit">Submit form</button>
+            <button class="btn btn-primary" id="submit" type="submit">Add Movie</button>
         </form>
         <br>
         <table class="table-responsive table-hover">
@@ -29,7 +31,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Rating</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody id="movieList"></tbody>
@@ -44,7 +46,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
                 <h4 class="modal-title">Edit</h4>
             </div>
             <div class="modal-body">
@@ -54,14 +56,18 @@
                 <input type="hidden" id="editId">
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" id="editMovie" data-dismiss="modal" type="submit">Submit form</button>
+                <button class="btn btn-primary" id="editMovie" data-dismiss="modal" type="submit">Update Movie</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="./main.js"></script>
 </body>

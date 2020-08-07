@@ -1,6 +1,6 @@
 .idea/
 *.iml
-
+public/keys.js
 node_modules/
 main.js
 *.map

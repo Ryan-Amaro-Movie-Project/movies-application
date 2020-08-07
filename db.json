@@ -1,16 +1,10 @@
 {
   "movies": [
     {
-      "title": "toy story 1",
-      "rating": "32",
-      "genre": "kids",
-      "id": 1
-    },
-    {
-      "title": "toy story",
+      "title": "Toy Story",
       "rating": "5",
-      "genre": "kids",
-      "id": 2
+      "genre": "Children",
+      "id": 1
     },
     {
       "title": "Ali",
